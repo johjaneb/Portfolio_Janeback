@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Satcube WebGUI — UX/UI case — Johanna Janebäck</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+<a class="case-nav-back" href="index.html#work"><span class="arr">←</span> All work</a>
+<nav class="nav" id="nav" style="justify-content:flex-end;">
+  <div class="nav__links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#skills">Skills</a>
+    <a class="cta" href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="case-hero" data-screen-label="Case hero">
+  <div class="aura"></div>
+  <div class="wrap">
+    <p class="case-eyebrow"><span style="width:9px;height:9px;background:var(--lime);display:inline-block;"></span> 02 · Product · Satcube</p>
+    <h1 class="case-title">Making satellite terminal management <span class="serif-italic" style="font-style:italic;">effortless</span></h1>
+    <p class="case-dek">The Satcube WebGUI lets anyone point, configure and monitor a satellite terminal from a browser, even with zero space-industry knowledge.</p>
+    <div class="case-meta">
+      <div class="m"><div class="lab">My role</div><div class="val">Product owner and UX/UI-Designer</div></div>
+      <div class="m"><div class="lab">Company</div><div class="val">Satcube AB</div></div>
+      <div class="m"><div class="lab">Year</div><div class="val">2024–2025</div></div>
+      <div class="m"><div class="lab">Focus</div><div class="val">UX / UI · Complex systems</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- KEY VISUAL -->
+<section class="case-section tight">
+  <div class="bleed reveal">
+    <img src="assets/webgui-dash.png" alt="WebGUI satellite-signal dashboard on a laptop" style="width:100%;max-width:920px;margin-inline:auto;display:block;" />
+    <p class="cap" style="text-align:center;">The WebGUI overview: satellite signal, strength, orientation and frequencies on one calm dashboard.</p>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="case-section" data-screen-label="Overview">
+  <div class="wrap two-col">
+    <h2>What it is</h2>
+    <div class="rich reveal">
+      <p>WebGUI stands for <strong>web-Guided User Interface</strong>, a browser-based tool for configuring and monitoring Satcube's portable satellite terminals <strong>in real time</strong>. It handles complex settings, detailed statistics and technical parameters.</p>
+      <p>It's a genuinely advanced kit, and it has to work equally well for first-timers and seasoned experts. My job, as product owner and designer, was to make sure it never felt as complex as it is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="case-section tight">
+  <div class="wrap reveal">
+    <p class="pull">A brand-new user, with no space-industry background, should be able to open the WebGUI and <span class="hl">understand exactly what they're doing.</span></p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="case-section" data-screen-label="Process">
+  <div class="wrap">
+    <div class="two-col" style="margin-bottom:18px;">
+      <h2>How I got there</h2>
+      <div class="rich reveal"><p>The interface is the bridge between deeply technical hardware and people who just need it to work.</p></div>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step__n">1</div>
+        <div class="step__b">
+          <div class="step__tag">Understand</div>
+          <h3>User studies &amp; personas</h3>
+          <p>I ran interviews with people inside and outside the company to define who actually uses the tool and built personas to keep those people present in design and development decisions.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__n">2</div>
+        <div class="step__b">
+          <div class="step__tag">Explore</div>
+          <h3>Low-fidelity prototyping</h3>
+          <p>Ideating and sketching with Figma and good old pen &amp; paper, fast and easy to throw away when a better idea showed up.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__n">3</div>
+        <div class="step__b">
+          <div class="step__tag">Refine</div>
+          <h3>Test, iterate, test, iterate…</h3>
+          <p>A/B testing, interviews and observations with internal and external participants. Between sessions I adjusted the design and raised the fidelity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS / DECISIONS -->
+<section class="case-section" data-screen-label="Results">
+  <div class="wrap">
+    <div class="two-col" style="margin-bottom:46px;">
+      <h2>The result</h2>
+      <div class="rich reveal"><p>Evaluations showed the design landed where it needed to, according to users, the final interface was <strong>intuitive, easy to use and easy to scale</strong> for the development and design team. Two decisions did much of that heavy lifting.</p></div>
+    </div>
+    <div class="gal gal-2">
+      <figure class="reveal">
+        <img src="assets/webgui-cards.png" alt="WebGUI Position, Wifi and Transmission cards" style="width:100%;display:block;border-radius:14px;" />
+        <figcaption><strong>Card-based design.</strong> Cards keep the interface easy to scale as settings are added, easy to scan and sort, and naturally responsive across screen sizes.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <div class="case-figure" style="padding:24px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;background:#f4f4f4;">
+          <img src="assets/webgui-2.png" alt="Tooltip explaining target value" style="border-radius:10px;" />
+          <img src="assets/webgui-3.png" alt="Tooltip explaining system messages" style="border-radius:10px;" />
+        </div>
+        <figcaption><strong>Extensive tooltips.</strong> Plain-language explanations sit beside technical terms, telling new users what something means and what a setting will actually do. They're an accessibility measure as much as an onboarding one.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap">
+    <div class="next-case reveal">
+      <div class="aura"></div>
+      <div><div class="lab">Next case</div><h2>One website, many jobs — and the system behind it</h2></div>
+      <a class="btn" href="case-satcube-website.html">Satcube website <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer section--tight" data-screen-label="Contact">
+  <div class="wrap foot-grid">
+    <div><p class="eyebrow" style="color:rgba(255,255,255,0.55)">Let's talk</p>
+      <p class="foot-contact"><a href="mailto:johanna.janeback@hotmail.com">johanna.janeback@hotmail.com</a></p>
+      <p class="foot-contact"><a href="tel:+46723584967">+46 72 358 49 67</a></p></div>
+    <div class="foot-meta">
+      <div class="foot-cols"><div><div class="lab">Location</div>Göteborg, Sweden</div><div><div class="lab">Elsewhere</div><a href="#">LinkedIn</a></div></div>
+      <a href="index.html" style="border:none;">Home ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');const s=()=>nav.classList.toggle('is-stuck',scrollY>40);addEventListener('scroll',s,{passive:true});s();
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

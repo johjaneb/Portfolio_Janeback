@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>An accessible activities app — master's thesis — Johanna Janebäck</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+<a class="case-nav-back" href="index.html#work"><span class="arr">←</span> All work</a>
+<nav class="nav" id="nav" style="justify-content:flex-end;">
+  <div class="nav__links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#skills">Skills</a>
+    <a class="cta" href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="case-hero" data-screen-label="Case hero">
+  <div class="aura"></div>
+  <div class="wrap">
+    <p class="case-eyebrow"><span style="width:9px;height:9px;background:var(--lime);display:inline-block;"></span> 01 · Master thesis</p>
+    <h1 class="case-title">Designing an activities app <span class="serif-italic" style="font-style:italic;">with</span> people with intellectual disabilities</h1>
+    <p class="case-dek">A master's thesis built on WCAG&nbsp;AAA and the principle that <em>no design decision is made without the people it's for.</em></p>
+    <div class="case-meta">
+      <div class="m"><div class="lab">My role</div><div class="val">Lead designer &amp; researcher</div></div>
+      <div class="m"><div class="lab">Context</div><div class="val">Master's thesis · Chalmers</div></div>
+      <div class="m"><div class="lab">Partner</div><div class="val">Föreningen Grunden</div></div>
+      <div class="m"><div class="lab">Year</div><div class="val">2022</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- KEY VISUAL -->
+<section class="case-section tight">
+  <div class="bleed reveal">
+    <div class="phones">
+      <div class="phone"><img src="assets/app-1.png" alt="App home screen — What do you want to do?" /></div>
+      <div class="phone"><img src="assets/app-2.png" alt="App activity detail — football in Slottskogen" /></div>
+    </div>
+    <p class="cap" style="text-align:center;">The shipped concept: a calm, high-contrast home screen with one clear question — <em>Vad vill du göra?</em> (“What do you want to do?”) — and an activity built around big, legible cards.</p>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section class="case-section" data-screen-label="Background">
+  <div class="wrap two-col">
+    <h2>The background</h2>
+    <div class="rich reveal">
+      <p><strong>Föreningen Grunden</strong> is a daily activities centre in Gothenburg for people with intellectual disabilities. It gives the people of Föreningen Grunden work experience, activities and community.</p>
+      <p>For my master's thesis in Interaction Design at Chalmers, my thesis partner and I set out to design an app that helps the people of Föreningen Grunden <strong>find and book activities</strong> and, through that, strengthen community and social participation.</p>
+      <p>The hard part wasn't the feature list. It was making something that genuinely <em>worked</em> for a group whose needs vary enormously, and who are too often designed around rather than designed with.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL -->
+<section class="case-section tight">
+  <div class="wrap reveal">
+    <p class="pull">The last thing we wanted to ship was something that, <span class="hl">in the end, wouldn't work</span> for the people it was for.</p>
+  </div>
+</section>
+
+<!-- APPROACH / PROCESS -->
+<section class="case-section" data-screen-label="Process">
+  <div class="wrap">
+    <div class="two-col" style="margin-bottom:18px;">
+      <h2>A testing-first process</h2>
+      <div class="rich reveal">
+        <p>So we put <strong>user studies at the heart of the entire project</strong>. We spent the majority of our time on testing and iteration, on one firm principle: no design decision would be made without validation from the target group.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step__n">1</div>
+        <div class="step__b">
+          <div class="step__tag">Immerse</div>
+          <h3>Research &amp; observation at the centre</h3>
+          <p>We ran workshops, interviews and observations with actual users at Grunden, including people with visual impairments, memory difficulties and other cognitive variations. We learned the language, routines and barriers that never show up in a brief.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__n">2</div>
+        <div class="step__b">
+          <div class="step__tag">Frame</div>
+          <h3>Define the users &amp; their real needs</h3>
+          <p>Cognitive factors and visual impairments meant accessibility couldn't be a layer added at the end. We made it the brief: it had to be readable, calm, forgiving, and obvious, for a wide spectrum of abilities.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__n">3</div>
+        <div class="step__b">
+          <div class="step__tag">Prototype</div>
+          <h3>From paper to clickable</h3>
+          <p>We sketched on paper and built low-to-high fidelity prototypes in Figma, deliberately rough at first, so testing could reshape them before we got attached.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__n">4</div>
+        <div class="step__b">
+          <div class="step__tag">The loop</div>
+          <h3>Test → adjust → test → adjust…</h3>
+          <p>Interviews, observations and hands-on sessions with participants. Between each round we changed the design, then brought it back. We kept going until people could complete tasks comfortably and on their own.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__n">5</div>
+        <div class="step__b">
+          <div class="step__tag">Validate</div>
+          <h3>Confirm it works for the intended group</h3>
+          <p>The final concept was evaluated against WCAG AAA and, more importantly, against reality, testing every key flow with the people it was designed for.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WCAG / DECISIONS -->
+<section class="case-section" data-screen-label="Decisions">
+  <div class="wrap">
+    <div class="two-col" style="margin-bottom:46px;">
+      <h2>Designing to WCAG AAA</h2>
+      <div class="rich reveal">
+        <p>Many participants needed extra attention to accessibility because of visual impairments, memory difficulties and other cognitive variations, so we held the design to <strong>WCAG AAA — the highest level</strong>. It set concrete, checkable rules for text size, colour contrast, navigation structure and interaction patterns, and put clarity and predictability ahead of aesthetic complexity.</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="hcard reveal"><div class="ic">A</div><h3>Generous type &amp; contrast</h3><p>Large text and strong navy-on-white / white-on-navy contrast that clears AAA, so the interface stays legible for low vision.</p></div>
+      <div class="hcard reveal"><div class="ic">◍</div><h3>One task per screen</h3><p>Big tap targets, icon + plain-language label, and a single clear action, reducing cognitive load and the chance of getting lost.</p></div>
+      <div class="hcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"></rect></svg></div><h3>Calm, consistent patterns</h3><p>The same layout, colours and navigation everywhere, so learning one screen means you've learned them all.</p></div>
+      <div class="hcard reveal"><div class="ic">☺</div><h3>Friendly, not clinical</h3><p>Soft light-blue cards and warm icons make the app feel inviting and safe rather than like an administrative tool.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITY CATEGORIES -->
+<section class="case-section tight" data-screen-label="Categories">
+  <div class="wrap">
+    <div class="two-col">
+      <h2>A visual language of activities</h2>
+      <div class="reveal">
+        <p class="rich" style="margin-bottom:28px;">Activities are coded with simple, recognisable icons and short words — so participants can recognise what they're looking for without reading dense text.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;">
+          <div class="cat"><img src="assets/icon-music.png" alt=""><span>Musik</span></div>
+          <div class="cat"><img src="assets/icon-nature.png" alt=""><span>Natur</span></div>
+          <div class="cat"><img src="assets/icon-game.png" alt=""><span>Spel</span></div>
+          <div class="cat"><img src="assets/icon-craft.png" alt=""><span>Pyssel</span></div>
+          <div class="cat"><img src="assets/icon-party.png" alt=""><span>Fest</span></div>
+          <div class="cat"><img src="assets/icon-film.png" alt=""><span>Film</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS -->
+<section class="case-section" data-screen-label="Lessons">
+  <div class="wrap two-col">
+    <h2>What it taught me</h2>
+    <div class="reveal">
+      <div class="rich" style="margin-bottom:30px;">
+        <p><strong>Empathy.</strong> The result is an app that's functional, accessible and intuitive for a user group whose needs are frequently overlooked in digital product development.</p>
+      </div>
+      <div class="rich">
+        <p><strong>The art of listening, and reading between the lines.</strong> It isn't always easy to say what you need, or what works best for you. That makes it all the more important to know what to listen for and to spot the pain points that aren't said out loud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section class="case-section">
+  <div class="wrap">
+    <div class="next-case reveal">
+      <div class="aura"></div>
+      <div>
+        <div class="lab">Next case</div>
+        <h2>Making a satellite tool feel effortless</h2>
+      </div>
+      <a class="btn" href="case-satcube-webgui.html">Satcube WebGUI <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer section--tight" data-screen-label="Contact">
+  <div class="wrap foot-grid">
+    <div><p class="eyebrow" style="color:rgba(255,255,255,0.55)">Let's talk</p>
+      <p class="foot-contact"><a href="mailto:johanna.janeback@hotmail.com">johanna.janeback@hotmail.com</a></p>
+      <p class="foot-contact"><a href="tel:+46723584967">+46 72 358 49 67</a></p></div>
+    <div class="foot-meta">
+      <div class="foot-cols"><div><div class="lab">Location</div>Göteborg, Sweden</div><div><div class="lab">Elsewhere</div><a href="#">LinkedIn</a></div></div>
+      <a href="index.html" style="border:none;">Home ↑</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+.cat { display:flex; align-items:center; gap:10px; background:var(--paper); border:1px solid var(--paper-edge); border-radius:999px; padding:8px 18px 8px 10px; }
+.cat img { width:34px; height:34px; object-fit:contain; }
+.cat span { font-weight:600; color:var(--ink); font-size:16px; }
+</style>
+
+<script>
+const nav=document.getElementById('nav');const s=()=>nav.classList.toggle('is-stuck',scrollY>40);addEventListener('scroll',s,{passive:true});s();
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

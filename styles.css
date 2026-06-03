@@ -1,0 +1,238 @@
+/* ===================================================================
+   Johanna Janebäck — Portfolio
+   Refined editorial system. Warm rose ground, plum ink, aura gradient,
+   lime spark. Adamina (display serif) + Fustat (UI/body) + Afacad (italic).
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Afacad:ital,wght@0,400..700;1,400..700&family=Fustat:wght@300..800&display=swap');
+
+:root {
+  /* ground */
+  --rose:        #ECE4E2;
+  --rose-deep:   #E4D9D6;
+  --rose-tint:   #F4EEEC;
+  --paper:       #FBF8F7;
+  --paper-edge:  #EFE7E4;
+
+  /* plum ink */
+  --ink:         #2B2535;   /* headings */
+  --ink-soft:    #4B4459;   /* sub-headings */
+  --body:        #5E576F;   /* body */
+  --muted:       #8C8597;   /* captions / meta */
+  --hair:        rgba(70,63,87,0.14);
+
+  /* aura + sparks */
+  --magenta:     #E75FBF;
+  --pink:        #F07AA8;
+  --peach:       #F4A77E;
+  --apricot:     #F6C79A;
+  --lime:        #9CDE7B;
+  --lime-deep:   #6FB94E;
+
+  /* satcube */
+  --navy:        #112A46;
+  --gold:        #E9AD81;
+
+  /* type */
+  --serif: 'Adamina', Georgia, 'Times New Roman', serif;
+  --sans:  'Fustat', 'Helvetica Neue', Arial, sans-serif;
+  --ital:  'Afacad', 'Fustat', sans-serif;
+
+  --maxw: 1180px;
+  --gutter: clamp(22px, 5vw, 80px);
+  --radius: 18px;
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  margin: 0;
+  background: var(--rose);
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--magenta); color: #fff; }
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--ink);
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+}
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+
+/* ---- layout helpers ---- */
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: clamp(72px, 11vw, 150px); position: relative; }
+.section--tight { padding-block: clamp(48px, 7vw, 96px); }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 9px; height: 9px;
+  background: var(--lime);
+  display: inline-block;
+  flex: none;
+}
+
+.lead { font-size: clamp(20px, 2.4vw, 27px); line-height: 1.5; color: var(--ink-soft); font-weight: 400; }
+
+.serif-italic { font-family: var(--ital); font-style: italic; }
+
+/* ===================================================================
+   AURA — the signature blurred gradient blob
+   =================================================================== */
+.aura {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px) saturate(112%);
+  opacity: var(--aura-strength, 0.92);
+  background:
+    radial-gradient(38% 58% at 72% 32%, rgba(231,95,191,0.95), transparent 62%),
+    radial-gradient(42% 52% at 58% 50%, rgba(240,122,168,0.78), transparent 64%),
+    radial-gradient(40% 56% at 44% 62%, rgba(244,167,126,0.72), transparent 66%),
+    radial-gradient(30% 46% at 30% 72%, rgba(246,199,154,0.55), transparent 70%);
+}
+
+/* thin hand-drawn wave line that rides over the aura */
+.wave-line { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: visible; }
+.wave-line path { fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 1.4; }
+
+/* ===================================================================
+   NAV
+   =================================================================== */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--gutter);
+  transition: background .4s var(--ease), backdrop-filter .4s, padding .4s var(--ease), border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+.nav.is-stuck {
+  background: rgba(236,228,226,0.72);
+  backdrop-filter: blur(16px) saturate(120%);
+  border-bottom-color: var(--hair);
+  padding-block: 14px;
+}
+.nav__brand {
+  font-family: var(--ital);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 11px;
+}
+.nav__brand .dot { width: 11px; height: 11px; background: var(--lime); flex: none; }
+.nav__links { display: flex; align-items: center; gap: clamp(18px, 3vw, 42px); }
+.nav__links a {
+  font-size: 15px; font-weight: 500; color: var(--ink-soft);
+  position: relative; padding: 4px 0; transition: color .25s;
+}
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: -2px; height: 1.5px;
+  background: var(--ink); transition: right .3s var(--ease);
+}
+.nav__links a:hover { color: var(--ink); }
+.nav__links a:hover::after { right: 0; }
+.nav__links a.cta {
+  border: 1.5px solid var(--ink); border-radius: 999px; padding: 9px 20px; color: var(--ink);
+}
+.nav__links a.cta::after { display: none; }
+.nav__links a.cta:hover { background: var(--ink); color: var(--rose); }
+.nav__burger { display: none; }
+
+@media (max-width: 760px) {
+  .nav__links a:not(.cta) { display: none; }
+}
+
+/* ===================================================================
+   BUTTONS
+   =================================================================== */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: 16px; font-weight: 600;
+  padding: 14px 26px; border-radius: 999px; cursor: pointer;
+  border: 1.5px solid var(--ink); background: var(--ink); color: var(--rose);
+  transition: transform .25s var(--ease), background .25s, color .25s, box-shadow .25s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -12px rgba(43,37,53,0.5); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--rose); }
+.btn .arr { transition: transform .3s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+
+/* ===================================================================
+   FOOTER / CONTACT
+   =================================================================== */
+.footer { position: relative; overflow: hidden; background: var(--ink); color: var(--rose-tint); }
+.footer .aura { opacity: 0.5; filter: blur(80px) saturate(120%); }
+.foot-grid { position: relative; z-index: 2; display: grid; gap: 40px; }
+.footer a.mail {
+  font-family: var(--serif);
+  font-size: clamp(34px, 6vw, 76px);
+  color: #fff; line-height: 1.05; letter-spacing: -0.02em;
+  display: inline-block; transition: opacity .3s;
+}
+.footer a.mail:hover { opacity: .7; }
+.footer .foot-contact { margin: 0 0 7px; font-size: 18px; line-height: 1.5; color: var(--rose-tint); }
+.footer .foot-contact a { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.32); padding-bottom: 1px; transition: border-color .3s; }
+.footer .foot-contact a:hover { border-color: #fff; }
+.foot-meta { display: flex; flex-wrap: wrap; gap: 30px 56px; justify-content: space-between; align-items: flex-end; }
+.foot-meta a { color: var(--rose-tint); border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: border-color .3s; }
+.foot-meta a:hover { border-color: #fff; }
+.foot-cols { display: flex; gap: 56px; flex-wrap: wrap; }
+.foot-cols .lab { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+
+/* ===================================================================
+   REVEAL ON SCROLL
+   =================================================================== */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ===================================================================
+   TAGS / CHIPS
+   =================================================================== */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  font-size: 14px; font-weight: 500; color: var(--ink-soft);
+  padding: 8px 16px; border-radius: 999px; border: 1px solid var(--hair);
+  background: rgba(255,255,255,0.4); display: inline-flex; align-items: center; gap: 8px;
+}
+.chip .sq { width: 7px; height: 7px; background: var(--lime); }
