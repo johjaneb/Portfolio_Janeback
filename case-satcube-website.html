@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  /* Soft access gate — see login.html. Static host, so this is not real security. */
+  if (localStorage.getItem('pf_auth') !== '1') {
+    var f = location.pathname.split('/').pop() || 'index.html';
+    location.replace('login.html?next=' + encodeURIComponent(f + location.hash));
+  }
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Satcube website &amp; design system — Johanna Janebäck</title>

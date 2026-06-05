@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Enter — Johanna Janebäck</title>
+<meta name="description" content="Private portfolio of Johanna Janebäck." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .gate {
+    position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 40px var(--gutter);
+  }
+  .gate .aura {
+    left: 50%; top: 46%; transform: translate(-50%,-50%);
+    width: 78vw; height: 72vh;
+  }
+  .gate__card {
+    position: relative; z-index: 3; width: 100%; max-width: 440px; text-align: center;
+  }
+  .gate__eyebrow {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 22px;
+  }
+  .gate__name {
+    font-family: var(--serif); color: var(--ink); font-size: clamp(38px, 7vw, 62px);
+    line-height: .98; margin: 0 0 8px;
+  }
+  .gate__role {
+    font-family: var(--ital); font-style: italic; color: var(--ink-soft);
+    font-size: clamp(18px, 3vw, 24px); margin: 0 0 36px;
+  }
+  .gate__form { display: flex; flex-direction: column; gap: 14px; }
+  .gate__input {
+    width: 100%; font-family: var(--sans); font-size: 17px; color: var(--ink);
+    background: var(--paper); border: 1px solid var(--hair); border-radius: var(--radius);
+    padding: 16px 18px; outline: none; transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .gate__input:focus { border-color: var(--magenta); box-shadow: 0 0 0 4px rgba(231,95,191,0.14); }
+  .gate__error {
+    min-height: 20px; font-size: 14px; color: #C24A6B; margin: 2px 0 0;
+    opacity: 0; transition: opacity .2s var(--ease);
+  }
+  .gate__error.is-visible { opacity: 1; }
+  .gate__note { margin-top: 30px; font-size: 13px; color: var(--muted); }
+  .gate__card .btn { width: 100%; justify-content: center; }
+</style>
+</head>
+<body>
+  <main class="gate">
+    <div class="aura"></div>
+    <div class="gate__card">
+      <p class="gate__eyebrow">Private portfolio</p>
+      <h1 class="gate__name">Johanna Janebäck</h1>
+      <p class="gate__role">UX · Brand · Product Design</p>
+
+      <form class="gate__form" id="gateForm" autocomplete="off">
+        <input class="gate__input" type="password" id="pw" name="pw"
+               placeholder="Password" aria-label="Password" autofocus />
+        <p class="gate__error" id="err" role="alert">That password isn't right — try again.</p>
+        <button class="btn" type="submit">Enter <span class="arr">→</span></button>
+      </form>
+
+      <p class="gate__note">Access by invitation. Please don't share.</p>
+    </div>
+  </main>
+
+  <script>
+    // NOTE: GitHub Pages is fully static — this gate is a soft lock, not real security.
+    // Anyone can read this password by viewing source. It only keeps casual visitors out.
+    var PASSWORD = 'Janeback2026';
+
+    function safeNext() {
+      var p = new URLSearchParams(location.search).get('next') || 'index.html';
+      // only allow same-site relative targets (no protocol, no leading //)
+      if (/^https?:|^\/\//i.test(p)) return 'index.html';
+      return p;
+    }
+
+    document.getElementById('gateForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var val = document.getElementById('pw').value;
+      var err = document.getElementById('err');
+      if (val === PASSWORD) {
+        localStorage.setItem('pf_auth', '1');
+        location.replace(safeNext());
+      } else {
+        err.classList.add('is-visible');
+        document.getElementById('pw').value = '';
+        document.getElementById('pw').focus();
+      }
+    });
+  </script>
+</body>
+</html>
